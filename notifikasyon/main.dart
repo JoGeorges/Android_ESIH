@@ -54,27 +54,27 @@ class _NotificationDemoState extends State<NotificationDemo> {
     ));
   }
 
-  Future<void> _immediate() => _show(1, 'Imedyat', 'Parèt touswit!');
+  Future<void> _immediate() => _show(1, 'Imedyat', 'Notifikasyon an paret touswit !');
 
   Future<void> _scheduled() async {
-    ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Pral parèt nan 1 minit')));
+    ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Notifikasyon an pral paret nan 1 minit')));
     await Future.delayed(const Duration(minutes: 1));
     await _show(2, 'Pwograme', '1 minit apre!');
   }
 
   Future<void> _repeating() async {
-    ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Premye nan 2 minit')));
+    ScaffoldMessenger.of(context).showSnackBar(const SnackBar(content: Text('Premye notifikasyon an pral paret nan 2 minit')));
     await Future.delayed(const Duration(minutes: 2));
     await _show(3, 'Repete #1', 'Apre 2 minit');
     timer = Timer.periodic(const Duration(minutes: 2), (t) => _show(3, 'Repete #${t.tick + 1}', 'Chak 2 minit'));
   }
 
-  Future<void> _longText() => _show(4, 'Tèks Long', 'Notifikasyon ak anpil tèks. Ou ka mete yon mesaj trè long. Sa bon pou bay anpil enfòmasyon.');
+  Future<void> _longText() => _show(4, 'Tèks long', 'Notifikasyon sila a genyen anpil tèks. Li pemet moun bay anpil enfòmasyon.');
 
   @override
   Widget build(BuildContext context) => Scaffold(
     appBar: AppBar(
-      title: const Text('Notifikasyon', style: TextStyle(color: Colors.white)),
+      title: const Text('NOTIFIKASYON', style: TextStyle(color: Colors.white)),
       backgroundColor: Colors.black,
       centerTitle: true,
     ),
@@ -105,10 +105,10 @@ class _NotificationDemoState extends State<NotificationDemo> {
         backgroundColor: Colors.white,
         foregroundColor: Colors.black,
         side: const BorderSide(color: Colors.black, width: 1.5),
-        padding: const EdgeInsets.symmetric(vertical: 16),
+        padding: const EdgeInsets.symmetric(vertical: 15),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
       ),
-      child: Text(txt, style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold)),
+      child: Text(txt, style: const TextStyle(fontSize: 15, fontWeight: FontWeight.bold)),
     ),
   );
 }
